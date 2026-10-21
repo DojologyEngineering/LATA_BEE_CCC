@@ -1,26 +1,249 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-body), var(--font-khmer), ui-monospace, monospace;
   --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-body), var(--font-khmer), ui-monospace, monospace;
+  --font-script: var(--font-script-face), cursive;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-leaf: var(--leaf);
+  --color-leaf-foreground: var(--leaf-foreground);
+  --color-bark: var(--bark);
+  --color-forest: var(--forest);
+  --color-forest-foreground: var(--forest-foreground);
+  --color-cocoa: var(--cocoa);
+  --color-cocoa-foreground: var(--cocoa-foreground);
+  --color-honey: var(--honey);
+  --color-orange: var(--orange);
+  --color-honey-foreground: var(--honey-foreground);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Brand palette: forest #55703D, honey #FFD23F, cocoa #4A3016, orange #C75F18.
+   Every other colour is a tint or shade mixed from these four. */
+:root {
+  --forest: #55703d;
+  --honey: #ffd23f;
+  --cocoa: #4a3016;
+  --orange: #c75f18;
+  --dust: url("/texture-dust.png");
+
+  --background: color-mix(in oklab, var(--honey) 9%, white);
+  --foreground: var(--cocoa);
+  --card: color-mix(in oklab, var(--honey) 4%, white);
+  --card-foreground: var(--cocoa);
+  --popover: var(--card);
+  --popover-foreground: var(--cocoa);
+  --primary: var(--orange);
+  --primary-foreground: #ffffff;
+  --secondary: color-mix(in oklab, var(--honey) 30%, white);
+  --secondary-foreground: var(--cocoa);
+  --muted: color-mix(in oklab, var(--honey) 15%, white);
+  --muted-foreground: color-mix(in oklab, var(--cocoa) 78%, white);
+  --accent: var(--honey);
+  --accent-foreground: var(--cocoa);
+  --leaf: var(--forest);
+  --leaf-foreground: color-mix(in oklab, var(--honey) 12%, white);
+  --bark: var(--cocoa);
+  --forest-foreground: color-mix(in oklab, var(--honey) 12%, white);
+  --cocoa-foreground: color-mix(in oklab, var(--honey) 12%, white);
+  --honey-foreground: var(--cocoa);
+  --destructive: var(--orange);
+  --border: color-mix(in oklab, var(--cocoa) 16%, white);
+  --input: color-mix(in oklab, var(--cocoa) 24%, white);
+  --ring: var(--orange);
+  --chart-1: var(--orange);
+  --chart-2: var(--honey);
+  --chart-3: var(--forest);
+  --chart-4: var(--cocoa);
+  --chart-5: var(--orange);
+  --radius: 0.75rem;
+  --sidebar: var(--muted);
+  --sidebar-foreground: var(--cocoa);
+  --sidebar-primary: var(--orange);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: var(--secondary);
+  --sidebar-accent-foreground: var(--cocoa);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--orange);
+}
+
+.dark {
+  --background: color-mix(in oklab, var(--cocoa) 45%, black);
+  --foreground: color-mix(in oklab, var(--honey) 14%, white);
+  --card: color-mix(in oklab, var(--cocoa) 70%, black);
+  --card-foreground: var(--foreground);
+  --popover: var(--card);
+  --popover-foreground: var(--foreground);
+  --primary: color-mix(in oklab, var(--orange) 88%, white);
+  --primary-foreground: var(--cocoa);
+  --secondary: color-mix(in oklab, var(--cocoa) 94%, var(--honey));
+  --secondary-foreground: var(--foreground);
+  --muted: color-mix(in oklab, var(--cocoa) 80%, black);
+  --muted-foreground: color-mix(in oklab, var(--honey) 22%, white 60%);
+  --accent: var(--honey);
+  --accent-foreground: var(--cocoa);
+  --leaf: color-mix(in oklab, var(--forest) 60%, white);
+  --leaf-foreground: var(--cocoa);
+  --bark: color-mix(in oklab, var(--cocoa) 60%, white);
+  --border: color-mix(in oklab, var(--honey) 16%, transparent);
+  --input: color-mix(in oklab, var(--honey) 22%, transparent);
+  --ring: var(--primary);
+  --chart-1: var(--primary);
+  --chart-2: var(--honey);
+  --chart-3: var(--leaf);
+  --chart-4: var(--bark);
+  --chart-5: var(--orange);
+  --sidebar: var(--card);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--cocoa);
+  --sidebar-accent: var(--secondary);
+  --sidebar-accent-foreground: var(--foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--primary);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1, h2, h3, h4 {
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+  html {
+    @apply font-sans;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ticker {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@layer utilities {
+  .ticker {
+    animation: ticker 40s linear infinite;
+  }
+  .ticker:hover {
+    animation-play-state: paused;
+  }
+  /* Hover lift and press feedback. Hover only on devices that hover; press works on touch too. */
+  .lift {
+    transition: translate 0.3s ease, scale 0.2s ease, box-shadow 0.3s ease;
+  }
+  .lift:active {
+    scale: 0.98;
+  }
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .lift:hover {
+      translate: 0 -5px;
+      box-shadow: 0 18px 34px -16px color-mix(in oklab, var(--cocoa) 55%, transparent);
+    }
+  }
+  .press {
+    transition: scale 0.15s ease, translate 0.25s ease, box-shadow 0.25s ease, background-color 0.2s ease, filter 0.2s ease;
+  }
+  .press:active {
+    scale: 0.94;
+  }
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .press:hover {
+      translate: 0 -2px;
+      box-shadow: 0 10px 20px -10px color-mix(in oklab, var(--cocoa) 60%, transparent);
+    }
+  }
+  .spin-slow {
+    animation: spin-slow 28s linear infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ticker,
+    .spin-slow {
+      animation: none;
+    }
+  }
+  .font-script {
+    font-family: var(--font-script);
+    font-weight: 400;
+  }
+/* Dusty film texture + honeycomb line pattern, layered over any background colour. */
+  .dust {
+    background-image: var(--dust);
+    background-size: 700px auto;
+  }
+  .honeycomb {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='98' viewBox='0 0 56 98'%3E%3Cg fill='none' stroke='%234a3016' stroke-opacity='.12' stroke-width='1.5'%3E%3Cpath d='M28 2l26 15v30L28 62 2 47V17zM28 62v34M2 47L0 48M54 47l2 1'/%3E%3C/g%3E%3C/svg%3E"), var(--dust);
+    background-size: 56px 98px, 700px auto;
+  }
+  .honeycomb-light {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='98' viewBox='0 0 56 98'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.12' stroke-width='1.5'%3E%3Cpath d='M28 2l26 15v30L28 62 2 47V17zM28 62v34M2 47L0 48M54 47l2 1'/%3E%3C/g%3E%3C/svg%3E"), var(--dust);
+    background-size: 56px 98px, 700px auto;
+  }
+  .hex {
+    /* Hexagon with softly rounded corners */
+    --hex-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='34,18 66,18 88,50 66,82 34,82 12,50' fill='black' stroke='black' stroke-width='24' stroke-linejoin='round'/%3E%3C/svg%3E");
+    -webkit-mask: var(--hex-mask) center / 100% 100% no-repeat;
+    mask: var(--hex-mask) center / 100% 100% no-repeat;
+  }
+}
+
+html[lang="km"] .font-script {
+  font-family: var(--font-khmer);
+  font-weight: 500;
+}
+
+html[lang="km"] body {
+  line-height: 1.75;
 }
