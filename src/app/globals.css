@@ -66,7 +66,7 @@
   --honey: #ffd23f;
   --cocoa: #4a3016;
   --orange: #c75f18;
-  --dust: url("/texture-dust.png");
+  --dust: url("/texture-dust.webp");
 
   --background: color-mix(in oklab, var(--honey) 9%, white);
   --foreground: var(--cocoa);

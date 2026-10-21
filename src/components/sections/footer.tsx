@@ -30,7 +30,7 @@ export function SiteFooter() {
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1.2fr_1fr]">
           <div>
             <div className="flex items-center gap-3">
-              <Image src="/brand/logo.png" alt="" width={56} height={63} className="h-16 w-auto" />
+              <Image src="/brand/logo.webp" alt="" width={56} height={63} className="h-16 w-auto" />
               <div>
                 <p className="text-xl font-bold">{t.brand}</p>
                 <p className="text-sm opacity-70">{t.tagline}</p>

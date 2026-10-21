@@ -14,7 +14,7 @@ export function About() {
       <Container>
         <div className="honeycomb-light grid items-center gap-8 rounded-3xl bg-forest p-6 text-forest-foreground sm:p-10 lg:grid-cols-2 lg:gap-14">
           <div className="relative mx-auto w-full max-w-md lg:max-w-none">
-            <ArchPhoto src="/images/lata1.jpg" alt={t.process.alt[0]} className="aspect-[4/5] w-full" />
+            <ArchPhoto src="/images/lata1.webp" alt={t.process.alt[0]} className="aspect-[4/5] w-full" />
             <RotatingBadge className="absolute -bottom-8 right-3 size-32 sm:size-36 lg:-right-14 lg:bottom-20 lg:size-44" />
           </div>
           <div>

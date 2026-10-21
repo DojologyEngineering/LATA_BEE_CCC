@@ -20,7 +20,7 @@ function Person({ id, size = "md" }: { id: Key; size?: "md" | "lg" }) {
           size === "lg" ? "aspect-[3/4] w-40 sm:w-48" : "aspect-[3/4] w-28 sm:w-32",
         )}
       >
-        <Image src={`/images/team/${id}.jpg`} alt={p.name} fill sizes="200px" className="object-cover transition-transform duration-500 motion-safe:group-hover:scale-105" />
+        <Image src={`/images/team/${id}.webp`} alt={p.name} fill sizes="200px" className="object-cover transition-transform duration-500 motion-safe:group-hover:scale-105" />
       </div>
       <figcaption className="mt-3">
         <p className={cn("font-bold", size === "lg" && "text-lg")}>{p.name}</p>

@@ -40,7 +40,7 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <Link href="/" className="press flex items-center gap-2.5">
-          <Image src="/brand/logo.png" alt="" width={36} height={40} priority className="h-10 w-auto" />
+          <Image src="/brand/logo.webp" alt="" width={36} height={40} priority className="h-10 w-auto" />
           <span className="text-lg font-semibold tracking-tight">{t.brand}</span>
         </Link>
 

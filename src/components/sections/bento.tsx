@@ -33,9 +33,9 @@ export function BentoGrid({ headline, body, label }: { headline: string; body: s
       </Tile>
 
       <Tile className="flex min-h-80 items-end bg-muted p-0 sm:p-0 md:row-span-2">
-        <Image src="/images/lata2.jpg" alt={label} fill sizes="(min-width: 768px) 25vw, 90vw" className="object-cover" />
+        <Image src="/images/lata2.webp" alt={label} fill sizes="(min-width: 768px) 25vw, 90vw" className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-cocoa/70 via-transparent to-transparent" />
-        <Image src="/brand/logo.png" alt="" width={72} height={81} className="relative m-5 h-20 w-auto drop-shadow-lg" />
+        <Image src="/brand/logo.webp" alt="" width={72} height={81} className="relative m-5 h-20 w-auto drop-shadow-lg" />
       </Tile>
 
       <Tile className="flex flex-col justify-between bg-accent text-accent-foreground">

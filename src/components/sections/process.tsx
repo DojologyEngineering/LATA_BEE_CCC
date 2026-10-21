@@ -28,8 +28,8 @@ export function Process() {
             </ol>
           </div>
           <div className="grid grid-cols-2 items-start gap-3 sm:gap-5">
-            <ArchPhoto src="/images/lata3.jpg" alt={p.alt[2]} sizes="(min-width: 1024px) 28vw, 45vw" className="aspect-[3/5]" />
-            <ArchPhoto src="/images/lata4.jpg" alt={p.alt[3]} sizes="(min-width: 1024px) 28vw, 45vw" className="mt-10 aspect-[3/5] sm:mt-16" />
+            <ArchPhoto src="/images/lata3.webp" alt={p.alt[2]} sizes="(min-width: 1024px) 28vw, 45vw" className="aspect-[3/5]" />
+            <ArchPhoto src="/images/lata4.webp" alt={p.alt[3]} sizes="(min-width: 1024px) 28vw, 45vw" className="mt-10 aspect-[3/5] sm:mt-16" />
           </div>
         </div>
       </Container>

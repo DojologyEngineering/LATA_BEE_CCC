@@ -5,9 +5,9 @@ import { useLanguage } from "@/components/layout/language-provider";
 import { Container } from "@/components/sections/container";
 
 const sdgImages: Record<string, { src: string; w: number; h: number }> = {
-  "8": { src: "/images/sdg-8.png", w: 554, h: 554 },
-  "12": { src: "/images/sdg-12.png", w: 296, h: 296 },
-  "15": { src: "/images/sdg-15.png", w: 554, h: 554 },
+  "8": { src: "/images/sdg-8.webp", w: 554, h: 554 },
+  "12": { src: "/images/sdg-12.webp", w: 296, h: 296 },
+  "15": { src: "/images/sdg-15.webp", w: 554, h: 554 },
 };
 
 export function Impact() {

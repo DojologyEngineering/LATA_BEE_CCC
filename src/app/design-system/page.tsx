@@ -57,17 +57,17 @@ export default function DesignSystemPage() {
         <Section id="logo" title="Logo & favicon" hint="Logo is used in the header and as the favicon / Apple touch icon.">
           <div className="grid gap-4 sm:grid-cols-3">
             <Card className="items-center justify-center py-8">
-              <Image src="/brand/logo.png" alt="LATA Bee logo" width={134} height={150} />
+              <Image src="/brand/logo.webp" alt="LATA Bee logo" width={134} height={150} />
             </Card>
             <Card className="items-center justify-center gap-3 py-8">
               <div className="flex items-center gap-2.5">
-                <Image src="/brand/logo.png" alt="" width={36} height={40} className="h-10 w-auto" />
+                <Image src="/brand/logo.webp" alt="" width={36} height={40} className="h-10 w-auto" />
                 <span className="text-lg font-semibold">{t.brand}</span>
               </div>
               <p className="text-xs text-muted-foreground">Header lockup</p>
             </Card>
             <Card className="items-center justify-center gap-3 py-8">
-              <Image src="/brand/logo.png" alt="" width={32} height={36} className="h-9 w-auto" />
+              <Image src="/brand/logo.webp" alt="" width={32} height={36} className="h-9 w-auto" />
               <p className="text-xs text-muted-foreground">Favicon</p>
             </Card>
           </div>
@@ -148,7 +148,7 @@ export default function DesignSystemPage() {
           <div className="mt-6 grid items-center gap-8 rounded-3xl bg-forest p-6 text-forest-foreground sm:p-10 md:grid-cols-2">
             <div className="relative">
               <div className="flex aspect-[4/5] items-center justify-center rounded-[2rem] bg-forest-foreground/10 text-sm opacity-80">Photo placeholder</div>
-              <Image src="/brand/logo.png" alt="" width={90} height={101} className="absolute -right-3 bottom-6 h-24 w-auto drop-shadow-lg sm:-right-6 sm:h-28" />
+              <Image src="/brand/logo.webp" alt="" width={90} height={101} className="absolute -right-3 bottom-6 h-24 w-auto drop-shadow-lg sm:-right-6 sm:h-28" />
             </div>
             <div>
               <p className="text-sm font-medium uppercase tracking-widest opacity-80">Siem Reap, Cambodia</p>
