@@ -20,6 +20,7 @@ export function Hero() {
         loop
         playsInline
         preload="metadata"
+        poster="/images/hero-poster.webp"
         aria-hidden="true"
       />
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/55 via-black/30 to-black/60" />
