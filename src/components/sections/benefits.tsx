@@ -29,7 +29,7 @@ export function Benefits() {
             ))}
           </ul>
         </div>
-        <div className="dust rounded-3xl bg-accent p-6 text-accent-foreground sm:p-8">
+        <div className="crumple rounded-3xl bg-accent p-6 text-accent-foreground sm:p-8">
           <p className="font-script text-3xl">{b.useTitle}</p>
           <ol className="mt-4 space-y-4">
             {b.use.map((step, i) => (

@@ -67,6 +67,7 @@
   --cocoa: #4a3016;
   --orange: #c75f18;
   --dust: url("/texture-dust.webp");
+  --speck: url("/texture-speck.webp");
 
   --background: color-mix(in oklab, var(--honey) 9%, white);
   --foreground: var(--cocoa);
@@ -151,6 +152,20 @@
   body {
     @apply bg-background text-foreground;
   }
+  /* Fine paper speckle over the cream page background (light mode only). */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image: var(--speck);
+    background-size: 640px auto;
+    opacity: 0.32;
+  }
+  .dark body::before {
+    display: none;
+  }
   h1, h2, h3, h4 {
     font-weight: 700;
     line-height: 1.15;
@@ -223,13 +238,20 @@
     background-image: var(--dust);
     background-size: 700px auto;
   }
+  /* Crumpled-paper folds multiplied over the element's own background colour. */
+  .crumple {
+    background-image: url("/texture-crumple.webp?v=3");
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+  }
   .honeycomb {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='98' viewBox='0 0 56 98'%3E%3Cg fill='none' stroke='%234a3016' stroke-opacity='.12' stroke-width='1.5'%3E%3Cpath d='M28 2l26 15v30L28 62 2 47V17zM28 62v34M2 47L0 48M54 47l2 1'/%3E%3C/g%3E%3C/svg%3E"), var(--dust);
-    background-size: 56px 98px, 700px auto;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='96.995' viewBox='0 0 56 96.995'%3E%3Cpath d='M28 0L56 16.17V48.50L28 64.66L0 48.50V16.17Z M28 64.66V96.99' fill='none' stroke='%234a3016' stroke-opacity='.13' stroke-width='1.5' stroke-linejoin='round'/%3E%3C/svg%3E"), var(--dust);
+    background-size: 56px 96.995px, 700px auto;
   }
   .honeycomb-light {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='98' viewBox='0 0 56 98'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.12' stroke-width='1.5'%3E%3Cpath d='M28 2l26 15v30L28 62 2 47V17zM28 62v34M2 47L0 48M54 47l2 1'/%3E%3C/g%3E%3C/svg%3E"), var(--dust);
-    background-size: 56px 98px, 700px auto;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='96.995' viewBox='0 0 56 96.995'%3E%3Cpath d='M28 0L56 16.17V48.50L28 64.66L0 48.50V16.17Z M28 64.66V96.99' fill='none' stroke='%23ffffff' stroke-opacity='.14' stroke-width='1.5' stroke-linejoin='round'/%3E%3C/svg%3E"), var(--dust);
+    background-size: 56px 96.995px, 700px auto;
   }
   .hex {
     /* Hexagon with softly rounded corners */

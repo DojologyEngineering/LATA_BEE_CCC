@@ -4,6 +4,7 @@ import { Benefits } from "@/components/sections/benefits";
 import { WhySection } from "@/components/sections/bento";
 import { Contact } from "@/components/sections/contact";
 import { SiteFooter } from "@/components/sections/footer";
+import { Divider } from "@/components/sections/divider";
 import { Hero } from "@/components/sections/hero";
 import { Decline } from "@/components/sections/decline";
 import { Impact } from "@/components/sections/impact";
@@ -21,9 +22,12 @@ export default function Home() {
         <Ticker />
         <About />
         <WhySection />
+        <Divider />
         <Process />
+        <Divider />
         <Products />
         <Benefits />
+        <Divider />
         <Decline />
         <Impact />
         <Team />
